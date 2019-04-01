@@ -149,7 +149,7 @@ public class #(tableMeta.modelName)Dao {
         List<#(tableMeta.modelName)> modelList = pageModel.getList();
         List<#(tableMeta.modelName)Bean> beanList = modelListToBean(modelList);
         //创建 新的返回对象
-        return new Page<>(beanList, pageModel.getPageNumber(), pageModel.getPageSize(), pageModel.getTotalPage(), pageModel.getTotalRow());
+        return new Page<#(tableMeta.modelName)Bean>(beanList, pageModel.getPageNumber(), pageModel.getPageSize(), pageModel.getTotalPage(), pageModel.getTotalRow());
     }
 
 }

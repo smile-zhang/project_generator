@@ -4,6 +4,7 @@ import com.drew.generator.common.FileUtils;
 import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
+import com.jfinal.plugin.activerecord.dialect.OracleDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 
 import javax.sql.DataSource;
@@ -60,8 +61,8 @@ public class GeneratorMain {
         // 设置需要被移除的表名前缀用于生成modelName。例如表名 "osc_user"，移除前缀 "osc_"后生成的model名为 "User"而非 OscUser
         gernerator.setRemovedTableNamePrefixes("t_");
         //设置数据库方言
-        gernerator.setDialect(new MysqlDialect());
-        //gernerator.setDialect(new OracleDialect());
+//        gernerator.setDialect(new MysqlDialect());
+        gernerator.setDialect(new OracleDialect());
         //设置用于生成 Model 的模板文件，模板引擎将在 class path 与 jar 包内寻找模板文件
         gernerator.setModelTemplate(PropKit.get("modelTemplate"));
         gernerator.setBaseModelTemplate(PropKit.get("baseModelTemplate"));
